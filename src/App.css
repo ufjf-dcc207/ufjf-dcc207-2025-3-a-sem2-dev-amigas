@@ -1,0 +1,36 @@
+.titulo {
+    text-align: center;
+    margin-top: 0   ;
+}
+
+.subtitulo {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.App     {
+    background-color: #ffffff;
+    opacity: 0.8;
+    background-image: radial-gradient(#ffc6d0 0.8px, #ffffff 0.8px);
+    background-size: 16px 16px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    
+    background-color: aqua;
+
+    width: 100vw;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.SkincaresCtn{
+    display: flex;
+    width: 90%;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+
+}
