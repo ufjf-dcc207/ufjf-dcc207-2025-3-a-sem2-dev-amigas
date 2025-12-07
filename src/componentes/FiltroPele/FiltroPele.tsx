@@ -88,5 +88,16 @@ export default function FiltroPele() {
 
 
         function finaliza(){
-            
+            let pontos = {
+  oleosa: 0,
+  seca: 0,
+  mista: 0,
+  normal: 0
+};
+
+
+if (r.oleosidade === "alta") pontos.oleosa++;
+if (r.oleosidade === "baixa") pontos.seca++;
+if (r.oleosidade === "media") pontos.normal++;
+
         }
