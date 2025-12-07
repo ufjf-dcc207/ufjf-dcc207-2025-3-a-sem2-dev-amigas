@@ -92,7 +92,8 @@ export default function FiltroPele() {
   oleosa: 0,
   seca: 0,
   mista: 0,
-  normal: 0
+  normal: 0,
+  sensivel:0
 };
 
 
@@ -100,4 +101,32 @@ if (r.oleosidade === "alta") pontos.oleosa++;
 if (r.oleosidade === "baixa") pontos.seca++;
 if (r.oleosidade === "media") pontos.normal++;
 
+if (r.sensibilidade === "alta") pontos.seca++;
+if (r.sensibilidade === "baixa") pontos.normal++;
+if (r.sensibilidade === "media") pontos.mista++;
+
+if (r.zonaT === "sim") pontos.mista++;
+if (r.zonaT === "leve") pontos.normal++;
+if (r.zonaT === "nao") pontos.seca++;
+
+if (r.ressecamento === "sim") pontos.seca++;
+  if (r.ressecamento === "leve") pontos.normal++;
+  if (r.ressecamento === "nao") pontos.oleosa++;
+
+  if (r.acne === "alta") pontos.oleosa++;
+  if (r.acne === "media") pontos.mista++;
+  if (r.acne === "baixa") pontos.normal++;
+
+
+
+
+  let tipoFinal = "oleosa"; 
+
+  if (pontos.seca > pontos[tipoFinal]) tipoFinal = "seca";
+  if (pontos.mista > pontos[tipoFinal]) tipoFinal = "mista";
+  if (pontos.normal > pontos[tipoFinal]) tipoFinal = "normal";
+  if (pontos.sensivel > pontos[tipoFinal]) tipoFinal = "sensivel";
+
+
+  setResultado(tipoFinal);
         }
