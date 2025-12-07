@@ -81,3 +81,12 @@ export default function FiltroPele() {
 
                 )
             }
+        }
+
+
+
+
+
+        function finaliza(){
+            
+        }
