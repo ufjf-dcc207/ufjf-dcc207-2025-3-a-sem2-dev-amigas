@@ -11,10 +11,19 @@ export default function FiltroPele() {
     }
 
     function perguntas() {
+
+        {tiposPele.map(tipo => 
+
+
+
+            
+        )
+
+
         if (etapa === 5) {
             return (
         <div>
-          <button onClick={finalizar}>Finalizar análise de pele</button>
+          <button onClick={finaliza}>Finalizar análise de pele</button>
         </div>
       );
         }
@@ -97,25 +106,25 @@ export default function FiltroPele() {
 };
 
 
-if (r.oleosidade === "alta") pontos.oleosa++;
-if (r.oleosidade === "baixa") pontos.seca++;
-if (r.oleosidade === "media") pontos.normal++;
+if (respostas.oleosidade === "alta") pontos.oleosa++;
+if (respostas.oleosidade === "baixa") pontos.seca++;
+if (respostas.oleosidade === "media") pontos.normal++;
 
-if (r.sensibilidade === "alta") pontos.seca++;
-if (r.sensibilidade === "baixa") pontos.normal++;
-if (r.sensibilidade === "media") pontos.mista++;
+if (respostas.sensibilidade === "alta") pontos.seca++;
+if (respostas.sensibilidade === "baixa") pontos.normal++;
+if (respostas.sensibilidade === "media") pontos.mista++;
 
-if (r.zonaT === "sim") pontos.mista++;
-if (r.zonaT === "leve") pontos.normal++;
-if (r.zonaT === "nao") pontos.seca++;
+if (respostas.zonaT === "sim") pontos.mista++;
+if (respostas.zonaT === "leve") pontos.normal++;
+if (respostas.zonaT === "nao") pontos.seca++;
 
-if (r.ressecamento === "sim") pontos.seca++;
-  if (r.ressecamento === "leve") pontos.normal++;
-  if (r.ressecamento === "nao") pontos.oleosa++;
+if (respostas.ressecamento === "sim") pontos.seca++;
+  if (respostas.ressecamento === "leve") pontos.normal++;
+  if (respostas.ressecamento === "nao") pontos.oleosa++;
 
-  if (r.acne === "alta") pontos.oleosa++;
-  if (r.acne === "media") pontos.mista++;
-  if (r.acne === "baixa") pontos.normal++;
+  if (respostas.acne === "alta") pontos.oleosa++;
+  if (respostas.acne === "media") pontos.mista++;
+  if (respostas.acne === "baixa") pontos.normal++;
 
 
 
@@ -129,4 +138,6 @@ if (r.ressecamento === "sim") pontos.seca++;
 
 
   setResultado(tipoFinal);
+   setEtapa(0);
+        setRespostas({});
         }
