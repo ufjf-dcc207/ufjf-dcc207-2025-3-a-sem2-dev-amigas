@@ -90,7 +90,7 @@ if(etapa === 1) return perguntas(
                 )}
 
                 <button onClick={finaliza}>
-                    Verificar tipo de pele
+                    Finalizar análise
                 </button>
 
             </div>

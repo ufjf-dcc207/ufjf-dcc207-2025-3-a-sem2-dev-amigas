@@ -1,7 +1,7 @@
 .box {
     border-radius: 15px;
 
-    background-color: #b892ff;   /* roxo mais forte */
+    background-color: #b892ff;   
 
     max-width: 800px;
     width: 40vw;
@@ -26,18 +26,16 @@
 }
 
 
-/* ===========================
-   RESPOSTAS (quadrados)
-=========================== */
+
 
 .item {
     display: flex;
     align-items: center;
 
-    width: 50%;              /* metade da box */
+    width: 50%;             
     padding: 12px;
 
-    background: white;       /* quadrado branco */
+    background: white;       
     border-radius: 12px;
 
     cursor: pointer;
@@ -47,21 +45,19 @@
     box-shadow: 0 2px 5px rgba(0,0,0,.08);
 }
 
-/* hover */
+
 .item:hover {
-    background: #efe2ff;     /* roxo clarinho */
+    background: #efe2ff;    
 }
 
-/* texto */
+
 .item span {
     font-size: 15px;
     color: #333;
 }
 
 
-/* ===========================
-   CHECK ✅
-=========================== */
+
 
 .check {
     width: 20px;
@@ -83,22 +79,19 @@
 }
 
 
-/* ===========================
-   SELECIONADO
-=========================== */
+
 
 .item.ativo {
-    background: #d9c6ff;     /* fica mais roxo quando selecionado */
+    background: #d9c6ff;     
+
 }
+
 
 .item.ativo .check {
     opacity: 1;
 }
 
 
-/* ===========================
-   RESULTADO FINAL
-=========================== */
 
 .resultado {
     font-size: 22px;
