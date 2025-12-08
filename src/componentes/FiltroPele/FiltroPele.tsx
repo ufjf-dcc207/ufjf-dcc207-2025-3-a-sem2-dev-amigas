@@ -1,4 +1,5 @@
 
+
 export default function FiltroPele() {
     const [etapa, setEtapa] = useState(1);
     const [respostas, setRespostas] = useState({});
@@ -10,13 +11,28 @@ export default function FiltroPele() {
         setEtapa(etapa + 1);
     }
 
-    function perguntas() {
 
-        {tiposPele.map(tipo => 
+    const opcoes=[baixa, media, alta];
+
+//titulo é o titulo da pergunta e nome-opcoes é o que será passado p  salvarResposta, ex:oleosidade:baixa
+    function perguntas(titulo, nome, opcoes){
+
+return(
+
+         <div className="box">
+                <h3>{titulo}</h3>
+
+
+        {opcoes.map(op => (
+            <div
+        key={op}
+        className={"item " + (respostas[nome] === op ? "ativo" : "")}
+        onClick={() => selecionar(nome, op)}
+    ></div>
+        )
 
 
 
-            
         )
 
 
@@ -141,3 +157,4 @@ if (respostas.ressecamento === "sim") pontos.seca++;
    setEtapa(0);
         setRespostas({});
         }
+    }
