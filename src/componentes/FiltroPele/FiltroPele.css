@@ -1,0 +1,110 @@
+.box {
+    border-radius: 15px;
+
+    background-color: #b892ff;   /* roxo mais forte */
+
+    max-width: 800px;
+    width: 40vw;
+
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
+    gap: 14px;
+
+    box-shadow: 5px 5px 16px rgba(0,0,0,.1);
+}
+
+.box h3 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+
+/* ===========================
+   RESPOSTAS (quadrados)
+=========================== */
+
+.item {
+    display: flex;
+    align-items: center;
+
+    width: 50%;              /* metade da box */
+    padding: 12px;
+
+    background: white;       /* quadrado branco */
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,.08);
+}
+
+/* hover */
+.item:hover {
+    background: #efe2ff;     /* roxo clarinho */
+}
+
+/* texto */
+.item span {
+    font-size: 15px;
+    color: #333;
+}
+
+
+/* ===========================
+   CHECK ✅
+=========================== */
+
+.check {
+    width: 20px;
+    height: 20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-right:10px;
+
+    font-weight: bold;
+
+    color: #7e52ff;
+
+    opacity: 0;
+
+    transition: .2s;
+}
+
+
+/* ===========================
+   SELECIONADO
+=========================== */
+
+.item.ativo {
+    background: #d9c6ff;     /* fica mais roxo quando selecionado */
+}
+
+.item.ativo .check {
+    opacity: 1;
+}
+
+
+/* ===========================
+   RESULTADO FINAL
+=========================== */
+
+.resultado {
+    font-size: 22px;
+    font-weight: bold;
+
+    color: white;
+
+    margin-top: 30px;
+}

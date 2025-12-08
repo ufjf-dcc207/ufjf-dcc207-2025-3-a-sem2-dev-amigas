@@ -19,7 +19,9 @@ export default function FiltroPele() {
 
     function salvarResposta(pergunta: string, valor: string) {
         setRespostas(prev => ({ ...prev, [pergunta]: valor }));
+        if(etapa<5){
         setEtapa(etapa + 1);
+        }
     }
 
 
@@ -88,7 +90,7 @@ if(etapa === 1) return perguntas(
                 )}
 
                 <button onClick={finaliza}>
-                    Finalizar análise
+                    Verificar tipo de pele
                 </button>
 
             </div>

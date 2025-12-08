@@ -67,7 +67,9 @@ const listaSkincare: SkinCareProps[] = [
 function App() {
   return (
     <div className="App">
+       
       <h1 className="titulo">Produtos de skin care para cada tipo de pele</h1>
+        <FiltroPele />
       <h2 className="subtitulo">Tipos de pele:</h2>
 
       <main className="SkincaresCtn">
@@ -77,7 +79,6 @@ function App() {
               ))}
       </main> 
 
-      <FiltroPele />
     </div>
   );
 }
