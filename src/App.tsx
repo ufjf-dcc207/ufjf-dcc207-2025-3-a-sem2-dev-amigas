@@ -1,6 +1,6 @@
 import "./App.css";
 import SkinCare, { type SkinCareProps } from "./componentes/SkinCare/SkinCare";
-
+import FiltroPele from "./componentes/FiltroPele/FiltroPele";
 
 const listaSkincare: SkinCareProps[] = [
   {
@@ -77,7 +77,7 @@ function App() {
               ))}
       </main> 
 
-     
+      <FiltroPele />
     </div>
   );
 }

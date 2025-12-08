@@ -1,22 +1,32 @@
-import { tipo } from "react-icons/ti";
 
+import { useState } from "react";
+import "./FiltroPele.css"
 
+type TipoPontos = "oleosa" | "seca" | "mista" | "normal" | "sensivel";
+
+const tipos: TipoPontos[] = [
+    "oleosa",
+    "seca",
+    "mista",
+    "normal",
+    "sensivel"
+];
 export default function FiltroPele() {
     const [etapa, setEtapa] = useState(1);
-    const [respostas, setRespostas] = useState({});
-    const [resultado, setResultado] = useState(null);
+   const [respostas, setRespostas] = useState<{[key: string]: string}>({});
+    const [resultado, setResultado] = useState<TipoPontos | null>(null);
 
 
-    function salvarResposta(pergunta, valor) {
+    function salvarResposta(pergunta: string, valor: string) {
         setRespostas(prev => ({ ...prev, [pergunta]: valor }));
         setEtapa(etapa + 1);
     }
 
 
-    const opcoes = ["baixa", "media", "alta"];
+
 
     //titulo é o titulo da pergunta e nome-opcoes é o que será passado p  salvarResposta, ex:oleosidade:baixa
-    function perguntas(titulo, nome, opcoes) {
+    function perguntas(titulo: string, nome: string, opcoes: string[]) {
 
 return(
         <div className="box">
@@ -90,7 +100,8 @@ if(etapa === 1) return perguntas(
 
 
 function finaliza() {
-    let pontos = {
+    
+ let pontos: any = {
         oleosa: 0,
         seca: 0,
         mista: 0,
@@ -122,25 +133,28 @@ function finaliza() {
 
 
 
-    let tipo = "oleosa";
-
-    if (pontos.seca > pontos[tipo]) tipo = "seca";
-    if (pontos.mista > pontos[tipo]) tipo = "mista";
-    if (pontos.normal > pontos[tipo]) tipo = "normal";
-    if (pontos.sensivel > pontos[tipo]) tipo = "sensivel";
 
 
-    setResultado(tipo);
-    setEtapa(0);
-    setRespostas({});
+
+ let tipoFinal: TipoPontos = "oleosa";
+
+for (const t of tipos) {
+    if (pontos[t] > pontos[tipoFinal]) {
+        tipoFinal = t;
+    }
 }
 
- if(resultado){
+ setResultado(tipoFinal);
+    setEtapa(0);
+    setRespostas({});
+    
+}
+  if (resultado) {
         return (
             <div className="box">
-                <h2>Seu tipo de pele é: {resultado}</h2>
+                Seu tipo de pele é: {resultado}
             </div>
         );
     }
-    
+
 }
