@@ -5,11 +5,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    display: flex;
     padding: 10px; 
     width: 80%; 
     margin: 10px auto; 
-    display: flex;
+    
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -21,7 +21,7 @@
     font-weight: 700;
     color: #cfa5ff; 
     white-space: nowrap;   
-       
+       display: flex;
     text-overflow: ellipsis; 
     text-align: center;  
 }

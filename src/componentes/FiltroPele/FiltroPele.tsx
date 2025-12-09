@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./FiltroPele.css"
 
-type TipoPontos = "oleosa" | "seca" | "mista" | "normal" | "sensivel"| "maduras";
+type TipoPontos = "oleosa" | "seca" | "mista" | "normal" | "sensivel"| "madura";
 
 const tipos: TipoPontos[] = [
     "oleosa",
@@ -20,7 +20,7 @@ export default function FiltroPele() {
 
     function salvarResposta(pergunta: string, valor: string) {
         setRespostas(prev => ({ ...prev, [pergunta]: valor }));
-        if(etapa<5){
+        if(etapa<6){
         setEtapa(etapa + 1);
         }
     }
@@ -56,7 +56,7 @@ return(
 
 if(etapa == 1) return perguntas(
     "Quais suas principais preocupações?",
-    "madura",
+    "preocupacao",
     ["manchas", "falta de viço", "cravos/espinhas","rugas/linhas finas"])
 
 
@@ -108,6 +108,12 @@ if(etapa === 2) return perguntas(
 
 
 function finaliza() {
+    if (respostas.preocupacao === "rugas/linhas finas") {
+        setResultado("madura");
+        setEtapa(0);
+        setRespostas({});
+        return;
+    }
     
  let pontos: any = {
         oleosa: 0,
@@ -119,32 +125,27 @@ function finaliza() {
     };
 
 
-    if (respostas.madura === "Rugas/Linhas Finas") pontos.madura++;
-    if (respostas.madura === "alta","media") pontos.madura++;
-    if (respostas.madura === "baixa") pontos.madura++;
-    if (respostas.madura === "Não") pontos.madura++;
+    if (respostas.preocupacao === "rugas/linhas finas") pontos.madura++;
+    if (respostas.preocupacao === "manchas") pontos.mista++;
+    if (respostas.preocupacao === "falta de viço") pontos.seca++;
+    if (respostas.preocupacao === "cravos/espinhas") pontos.oleosa++;
 
-    if (respostas.oleosidade === "Cravos/Espinhas") pontos.oleosa++;
     if (respostas.oleosidade === "alta") pontos.oleosa++;
+    if (respostas.oleosidade === "média") pontos.normal++;
     if (respostas.oleosidade === "baixa") pontos.seca++;
-    if (respostas.oleosidade === "media") pontos.normal++;
 
-    if (respostas.sensibilidade === "Falta de Viço") pontos.seca++;
-    if (respostas.sensibilidade === "alta") pontos.seca++;
-    if (respostas.sensibilidade === "baixa") pontos.normal++;
-    if (respostas.sensibilidade === "media") pontos.mista++;
+    if (respostas.sensibilidade === "alta") pontos.sensivel++;
+    if (respostas.sensibilidade === "média") pontos.mista++;
+    if (respostas.sensibilidade === "baixa") pontos.mista++;
 
-    if (respostas.zonaT === "Manchas") pontos.oleosa++;
     if (respostas.zonaT === "sim") pontos.mista++;
     if (respostas.zonaT === "leve") pontos.normal++;
     if (respostas.zonaT === "nao") pontos.seca++;
 
-    if (respostas.ressecamento === "Falta de Viço") pontos.seca++;
     if (respostas.ressecamento === "sim") pontos.seca++;
     if (respostas.ressecamento === "leve") pontos.normal++;
     if (respostas.ressecamento === "nao") pontos.oleosa++;
 
-    if (respostas.acne === "Cravos/Espinhas") pontos.oleosa++;
     if (respostas.acne === "alta") pontos.oleosa++;
     if (respostas.acne === "media") pontos.mista++;
     if (respostas.acne === "baixa") pontos.normal++;

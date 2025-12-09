@@ -45,10 +45,30 @@ const listaSkincare: SkinCareProps[] = [
         "Raras imperfeições; leve ressecamento em clima seco; poros pouco visíveis.",
       status: "Equilibrada — nem seca nem oleosa; textura macia e viçosa.",
     },
-    produto:  [ {etapa: "LIMPEZA", item: "Gel suave — limpa sem agredir e mantém o equilíbrio natural da pele." },
+    produto:  [ 
+            {etapa: "LIMPEZA", item: "Gel suave — limpa sem agredir e mantém o equilíbrio natural da pele." },
             {etapa: "HIDRATAÇÃO", item: "Creme leve com vitaminas — mantém a maciez e o viço natural." },
             {etapa: "TRATAMENTO", item: "Sérum antioxidante — previne sinais de idade e mantém o brilho saudável." }]
   },
+  {
+  pele: {
+    tipo: "Madura",
+    adversidade:
+      "Rugas, linhas finas, perda de firmeza, manchas de idade, textura irregular e menor produção de colágeno.",
+    status:
+      "Pele com sinais naturais do envelhecimento; precisa de hidratação intensa.",
+  },
+  produto: [
+    {etapa: "LIMPEZA", item: "Gel ou creme de limpeza suave — evita repuxar a pele e mantém a hidratação natural.",},
+    {etapa: "HIDRATAÇÃO",item:"Creme hidratante com ácido hialurônico e ceramidas — repõe água, melhora firmeza e suaviza linhas finas.",},     
+    {etapa: "TRATAMENTO",item:"Sérum com retinol ou peptídeos — estimula colágeno, melhora manchas e reduz sinais de envelhecimento.",
+      
+  },
+  ],
+},
+
+
+  
   {
     pele: {
       tipo: "Sensível",
@@ -62,6 +82,7 @@ const listaSkincare: SkinCareProps[] = [
             {etapa: "TRATAMENTO", item: "Sérum com niacinamida e ceramidas — repara e acalma a pele sensível e reativa." }]
   },
 ];
+
 
 
 function App() {
