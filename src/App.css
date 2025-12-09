@@ -1,12 +1,14 @@
 .titulo {
     text-align: center;
     margin-top: 0   ;
+    color: #6a0dad;
 }
 
 .subtitulo {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 20px;
+    color: #6a0dad;
 }
 .App     {
     background-color: #ffffff;

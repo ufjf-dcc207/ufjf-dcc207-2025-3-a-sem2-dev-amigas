@@ -1,10 +1,9 @@
 .box {
     border-radius: 15px;
 
-    background-color: #b892ff;   
-
-    max-width: 800px;
-    width: 40vw;
+    background-color: #cfa5ff; 
+    max-width: auto;
+    width: 70vw;
 
     min-height: 400px;
 
@@ -20,9 +19,14 @@
 
 .box h3 {
     text-align: center;
-    font-size: 18px;
+
     font-weight: 600;
     color: white;
+     font-size: 1.5rem;      
+  font-weight: bold;      
+      
+  text-transform: capitalize; 
+  margin-bottom: 4px;
 }
 
 
@@ -52,8 +56,11 @@
 
 
 .item span {
-    font-size: 15px;
-    color: #333;
+   font-size: 1.5rem;      
+  font-weight: bold;      
+  color: #6a0dad;         
+  text-transform: capitalize; 
+  margin-bottom: 4px;
 }
 
 
@@ -94,10 +101,18 @@
 
 
 .resultado {
-    font-size: 22px;
+    font-size: 2rem;          /* tamanho grande */
     font-weight: bold;
 
     color: white;
 
-    margin-top: 30px;
+    text-align: center;     /* centraliza o texto */
+
+    margin-top: 30px;       
+    margin-bottom:50px;
+
+    padding: 50px;
+
+    line-height: 1.3;
+
 }

@@ -154,7 +154,10 @@ for (const t of tipos) {
   if (resultado) {
         return (
             <div className="box">
-                Seu tipo de pele é: {resultado}
+                <div className="resultado">
+                Seu tipo de pele é: {resultado}!
+                Descubra abaixo os cuidados indicados para ela:
+            </div>
             </div>
         );
     }
