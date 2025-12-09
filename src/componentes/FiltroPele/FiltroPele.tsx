@@ -114,26 +114,37 @@ function finaliza() {
         seca: 0,
         mista: 0,
         normal: 0,
-        sensivel: 0
+        sensivel: 0,
+        madura: 0
     };
 
 
+    if (respostas.madura === "Rugas/Linhas Finas") pontos.madura++;
+    if (respostas.madura === "alta","media") pontos.madura++;
+    if (respostas.madura === "baixa") pontos.madura++;
+    if (respostas.madura === "Não") pontos.madura++;
+
+    if (respostas.oleosidade === "Cravos/Espinhas") pontos.oleosa++;
     if (respostas.oleosidade === "alta") pontos.oleosa++;
     if (respostas.oleosidade === "baixa") pontos.seca++;
     if (respostas.oleosidade === "media") pontos.normal++;
 
+    if (respostas.sensibilidade === "Falta de Viço") pontos.seca++;
     if (respostas.sensibilidade === "alta") pontos.seca++;
     if (respostas.sensibilidade === "baixa") pontos.normal++;
     if (respostas.sensibilidade === "media") pontos.mista++;
 
+    if (respostas.zonaT === "Manchas") pontos.oleosa++;
     if (respostas.zonaT === "sim") pontos.mista++;
     if (respostas.zonaT === "leve") pontos.normal++;
     if (respostas.zonaT === "nao") pontos.seca++;
 
+    if (respostas.ressecamento === "Falta de Viço") pontos.seca++;
     if (respostas.ressecamento === "sim") pontos.seca++;
     if (respostas.ressecamento === "leve") pontos.normal++;
     if (respostas.ressecamento === "nao") pontos.oleosa++;
 
+    if (respostas.acne === "Cravos/Espinhas") pontos.oleosa++;
     if (respostas.acne === "alta") pontos.oleosa++;
     if (respostas.acne === "media") pontos.mista++;
     if (respostas.acne === "baixa") pontos.normal++;
