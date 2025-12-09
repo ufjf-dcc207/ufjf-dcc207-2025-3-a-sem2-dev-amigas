@@ -2,14 +2,15 @@
 import { useState } from "react";
 import "./FiltroPele.css"
 
-type TipoPontos = "oleosa" | "seca" | "mista" | "normal" | "sensivel";
+type TipoPontos = "oleosa" | "seca" | "mista" | "normal" | "sensivel"| "maduras";
 
 const tipos: TipoPontos[] = [
     "oleosa",
     "seca",
     "mista",
     "normal",
-    "sensivel"
+    "sensivel",
+    "madura"
 ];
 export default function FiltroPele() {
     const [etapa, setEtapa] = useState(1);
@@ -53,33 +54,38 @@ return(
     );
 }
 
+if(etapa == 1) return perguntas(
+    "Quais suas principais preocupações?",
+    "madura",
+    ["manchas", "falta de viço", "cravos/espinhas","rugas/linhas finas"])
 
-if(etapa === 1) return perguntas(
+
+if(etapa === 2) return perguntas(
         "Qual é o grau de oleosidade da sua pele?",
         "oleosidade",
         ["baixa","média","alta"]
     );
 
-    if(etapa === 2) return perguntas(
+    if(etapa === 3) return perguntas(
         "Qual é a sensibilidade da sua pele?",
         "sensibilidade",
         ["baixa","média","alta"]
     );
 
-    if(etapa === 3) return perguntas(
+    if(etapa === 4) return perguntas(
         "Com que frequência surgem espinhas na sua pele?",
         "acne",
         ["baixa","média","alta"]
     );
 
-    if(etapa === 4) return perguntas(
+    if(etapa === 5) return perguntas(
         "Sua pele repuxa após lavar?",
         "ressecamento",
         ["não","leve","sim"]
     );
 
 
-    if(etapa === 5){
+    if(etapa === 6){
         return (
             <div className="box">
 
