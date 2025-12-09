@@ -27,7 +27,7 @@ export default function FiltroPele() {
 
 
 
-    //titulo é o titulo da pergunta e nome-opcoes é o que será passado p  salvarResposta, ex:oleosidade:baixa
+   
     function perguntas(titulo: string, nome: string, opcoes: string[]) {
 
 return(
@@ -55,27 +55,27 @@ return(
 
 
 if(etapa === 1) return perguntas(
-        "Quanto sua pele produz de oleosidade?",
+        "Qual é o grau de oleosidade da sua pele?",
         "oleosidade",
-        ["baixa","media","alta"]
+        ["baixa","média","alta"]
     );
 
     if(etapa === 2) return perguntas(
-        "Como sua pele reage a produtos novos?",
+        "Qual é a sensibilidade da sua pele?",
         "sensibilidade",
-        ["baixa","media","alta"]
+        ["baixa","média","alta"]
     );
 
     if(etapa === 3) return perguntas(
-        "Com que frequência aparecem espinhas?",
+        "Com que frequência surgem espinhas na sua pele?",
         "acne",
-        ["baixa","media","alta"]
+        ["baixa","média","alta"]
     );
 
     if(etapa === 4) return perguntas(
         "Sua pele repuxa após lavar?",
         "ressecamento",
-        ["nao","leve","sim"]
+        ["não","leve","sim"]
     );
 
 
